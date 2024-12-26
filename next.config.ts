@@ -6,7 +6,7 @@ const nextConfig = {
     loader: 'default',
     path: '',
   },
-  assetPrefix: './',
+  assetPrefix: '/Mokpopko_ferme', // Corrigé ici : on utilise un slash au début au lieu de './'
   basePath: '/Mokpopko_ferme',
   webpack: (config) => {
     config.module.rules.push({
