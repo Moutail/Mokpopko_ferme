@@ -5,7 +5,6 @@ import { Download, ChevronDown, Warehouse, Users, Tractor, FileText, Phone, Mail
 import NextImage from 'next/image';
 
 const navigation = ['accueil', 'activites', 'galerie', 'ressources', 'documents'];
-const prefix = process.env.NODE_ENV === 'production' ? '/Mokpopko_ferme' : '';
 
 type FarmImage = {
   src: string;
@@ -14,18 +13,18 @@ type FarmImage = {
  };
  
  // Images catégorisées
-const farmImages = [
-  { src: `${pathPrefix}/images/farm-images/ferme1.jpg`, alt: 'Vue de la ferme' },
-  { src: `${pathPrefix}/images/farm-images/elevage.jpg`, alt: 'Élevage' },
-  { src: `${pathPrefix}/images/farm-images/culture.jpg`, alt: 'Cultures' },
-  { src: `${pathPrefix}/images/farm-images/equipe.jpg`, alt: 'Notre équipe' },
-  { src: `${pathPrefix}/images/farm-images/materiel.jpg`, alt: 'Équipements' },
-  { src: `${pathPrefix}/images/farm-images/recolte.jpg`, alt: 'Récoltes' },
-];
+const farmImages: FarmImage[] = [
+  { src: '/images/farm-images/ferme1.jpg', alt: 'Vue de la ferme', category: 'ferme' },
+  { src: '/images/farm-images/elevage.jpg', alt: 'Élevage', category: 'elevage' },
+  { src: '/images/farm-images/culture.jpg', alt: 'Cultures', category: 'culture' },
+  { src: '/images/farm-images/equipe.jpg', alt: 'Notre équipe', category: 'equipe' },
+  { src: '/images/farm-images/materiel.jpg', alt: 'Équipements', category: 'materiel' },
+  { src: '/images/farm-images/recolte.jpg', alt: 'Récoltes', category: 'culture' }
+ ];
 
 const farmVideos = [
-  { src: `${pathPrefix}/videos/farm-videos/presentation.mp4`, title: 'Présentation de la ferme' },
-  { src: `${pathPrefix}/videos/farm-videos/activities.mp4`, title: 'Nos activités quotidiennes' },
+ { src: '/videos/farm-videos/presentation.mp4', title: 'Présentation de la ferme' },
+ { src: '/videos/farm-videos/activities.mp4', title: 'Nos activités quotidiennes' },
 ];
 
 const NavButton = ({ isOpen, toggle, scrolled }: { isOpen: boolean; toggle: () => void; scrolled: boolean }) => (
