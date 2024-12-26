@@ -136,30 +136,30 @@ const FarmWebsite = () => {
            </div>
          </div>
 
-         {/* Menu mobile avec animation */}
-         <div className={`${
-           isMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
-         } md:hidden overflow-hidden transition-all duration-500 ease-in-out`}>
-           <div className="py-4 space-y-2">
-             {navigation.map((item) => (
-               <Button
-                 key={item}
-                 variant="ghost"
-                 className={`w-full justify-start text-left transition-colors ${
-                   activeSection === item
-                     ? 'bg-green-100 text-green-800'
-                     : 'text-gray-800 hover:bg-green-50'
-                 }`}
-                 onClick={() => {
-                   setActiveSection(item);
-                   setIsMenuOpen(false);
-                 }}
-               >
-                 {item.charAt(0).toUpperCase() + item.slice(1)}
-               </Button>
-             ))}
-           </div>
-         </div>
+        {/* Menu mobile avec animation */}
+        <div className={`${
+          isMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
+        } md:hidden overflow-hidden transition-all duration-500 ease-in-out bg-white/95 backdrop-blur-sm shadow-lg`}>
+          <div className="py-4 space-y-2">
+            {navigation.map((item) => (
+              <Button
+                key={item}
+                variant="ghost"
+                className={`w-full justify-start text-left transition-colors ${
+                  activeSection === item
+                    ? 'bg-green-600 text-white hover:bg-green-700'
+                    : 'text-gray-900 hover:bg-green-50'
+                }`}
+                onClick={() => {
+                  setActiveSection(item);
+                  setIsMenuOpen(false);
+                }}
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </Button>
+            ))}
+          </div>
+        </div>
        </div>
      </nav>
 
