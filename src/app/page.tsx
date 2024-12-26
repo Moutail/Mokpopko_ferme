@@ -15,17 +15,17 @@ type FarmImage = {
  
  // Images catégorisées
 const farmImages = [
-  { src: `./images/farm-images/ferme1.jpg`, alt: 'Vue de la ferme' },
-  { src: `./images/farm-images/elevage.jpg`, alt: 'Élevage' },
-  { src: `./images/farm-images/culture.jpg`, alt: 'Cultures' },
-  { src: `./images/farm-images/equipe.jpg`, alt: 'Notre équipe' },
-  { src: `./images/farm-images/materiel.jpg`, alt: 'Équipements' },
-  { src: `./images/farm-images/recolte.jpg`, alt: 'Récoltes' },
+  { src: `${pathPrefix}/images/farm-images/ferme1.jpg`, alt: 'Vue de la ferme' },
+  { src: `${pathPrefix}/images/farm-images/elevage.jpg`, alt: 'Élevage' },
+  { src: `${pathPrefix}/images/farm-images/culture.jpg`, alt: 'Cultures' },
+  { src: `${pathPrefix}/images/farm-images/equipe.jpg`, alt: 'Notre équipe' },
+  { src: `${pathPrefix}/images/farm-images/materiel.jpg`, alt: 'Équipements' },
+  { src: `${pathPrefix}/images/farm-images/recolte.jpg`, alt: 'Récoltes' },
 ];
 
 const farmVideos = [
-  { src: './videos/farm-videos/presentation.mp4', title: 'Présentation de la ferme' },
-  { src: './videos/farm-videos/activities.mp4', title: 'Nos activités quotidiennes' },
+  { src: `${pathPrefix}/videos/farm-videos/presentation.mp4`, title: 'Présentation de la ferme' },
+  { src: `${pathPrefix}/videos/farm-videos/activities.mp4`, title: 'Nos activités quotidiennes' },
 ];
 
 const NavButton = ({ isOpen, toggle, scrolled }: { isOpen: boolean; toggle: () => void; scrolled: boolean }) => (
@@ -220,6 +220,7 @@ const FarmWebsite = () => {
                   alt="Élevage"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
                 />
               </div>
               <div className="p-8">
@@ -244,6 +245,7 @@ const FarmWebsite = () => {
                   alt="Agriculture"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
                 />
               </div>
               <div className="p-8">
@@ -303,6 +305,7 @@ const FarmWebsite = () => {
                       alt={image.alt}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
                       <div className="absolute inset-0 flex items-center justify-center text-center p-4">
@@ -541,6 +544,7 @@ const FarmWebsite = () => {
                width={1200}
                height={800}
                className="rounded-lg shadow-2xl"
+               loading="lazy"
              />
            </div>
          </div>
