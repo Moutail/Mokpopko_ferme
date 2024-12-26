@@ -13,7 +13,7 @@ type FarmImage = {
  };
  
  // Images catégorisées
-const farmImages: FarmImage[] = [
+ const farmImages: FarmImage[] = [
   { src: '/images/farm-images/ferme1.jpg', alt: 'Vue de la ferme', category: 'ferme' },
   { src: '/images/farm-images/elevage.jpg', alt: 'Élevage', category: 'elevage' },
   { src: '/images/farm-images/culture.jpg', alt: 'Cultures', category: 'culture' },
@@ -74,13 +74,8 @@ const FarmWebsite = () => {
    <div className="min-h-screen bg-gradient-to-b from-green-50 to-green-100">
      {/* Header avec parallax */}
      <header className="relative h-[70vh] overflow-hidden">
-      <div 
-        className="absolute inset-0 bg-[url('./images/farm-header.jpg')] bg-cover bg-center bg-no-repeat transform scale-110" 
-        style={{ 
-          transform: `translateY(${scrolled ? '10%' : '0'}) scale(${scrolled ? 1.1 : 1})`, 
-          transition: 'all 0.5s ease-out' 
-        }}
-      >
+       <div className="absolute inset-0 bg-[url('/images/farm-header.jpg')] bg-cover bg-center bg-no-repeat transform scale-110" 
+            style={{ transform: `translateY(${scrolled ? '10%' : '0'}) scale(${scrolled ? 1.1 : 1})`, transition: 'all 0.5s ease-out' }}>
          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
        </div>
        <div className="relative h-full flex items-center justify-center text-center text-white p-4">
@@ -219,7 +214,6 @@ const FarmWebsite = () => {
                   alt="Élevage"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
                 />
               </div>
               <div className="p-8">
@@ -244,7 +238,6 @@ const FarmWebsite = () => {
                   alt="Agriculture"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
                 />
               </div>
               <div className="p-8">
@@ -304,7 +297,6 @@ const FarmWebsite = () => {
                       alt={image.alt}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
                       <div className="absolute inset-0 flex items-center justify-center text-center p-4">
@@ -543,7 +535,6 @@ const FarmWebsite = () => {
                width={1200}
                height={800}
                className="rounded-lg shadow-2xl"
-               loading="lazy"
              />
            </div>
          </div>
