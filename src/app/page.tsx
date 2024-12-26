@@ -451,9 +451,9 @@ const FarmWebsite = () => {
               <h3 className="text-xl font-bold text-green-300">Contact</h3>
               <div className="space-y-4">
                 {[
-                  { icon: MapPin, text: "GAOUGBLE-NYAMASSILA, COMMUNE EST-MON3" },
-                  { icon: Phone, text: "+228 00 00 00 00" },
-                  { icon: Mail, text: "contact@fermemokpokpo.com" }
+                  { icon: MapPin, text: "GAOUGBLE-NYAMASSILA, COMMUNE EST-MONO" },
+                  { icon: Phone, text: "+228 98-92-96-60" },
+                  { icon: Mail, text: "fermemokpokpo20@gmail.com" }
                 ].map((item, index) => (
                   <div key={index} className="flex items-center space-x-3 group cursor-pointer">
                     <div className="p-2 bg-white/10 rounded-full group-hover:bg-green-600 transition-colors">
