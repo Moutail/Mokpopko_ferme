@@ -5,6 +5,7 @@ import { Download, ChevronDown, Warehouse, Users, Tractor, FileText, Phone, Mail
 import NextImage from 'next/image';
 
 const navigation = ['accueil', 'activites', 'galerie', 'ressources', 'documents'];
+const prefix = process.env.NODE_ENV === 'production' ? '/Mokpopko_ferme' : '';
 
 type FarmImage = {
   src: string;
@@ -13,18 +14,24 @@ type FarmImage = {
  };
  
  // Images catégorisées
- const farmImages: FarmImage[] = [
-  { src: '/images/farm-images/ferme1.jpg', alt: 'Vue de la ferme', category: 'ferme' },
-  { src: '/images/farm-images/elevage.jpg', alt: 'Élevage', category: 'elevage' },
-  { src: '/images/farm-images/culture.jpg', alt: 'Cultures', category: 'culture' },
-  { src: '/images/farm-images/equipe.jpg', alt: 'Notre équipe', category: 'equipe' },
-  { src: '/images/farm-images/materiel.jpg', alt: 'Équipements', category: 'materiel' },
-  { src: '/images/farm-images/recolte.jpg', alt: 'Récoltes', category: 'culture' }
- ];
+const farmImages = [
+  { src: `${prefix}/images/farm-images/ferme1.jpg`, alt: 'Vue de la ferme' },
+  { src: `${prefix}/images/farm-images/elevage.jpg`, alt: 'Élevage' },
+  { src: `${prefix}/images/farm-images/culture.jpg`, alt: 'Cultures' },
+  { src: `${prefix}/images/farm-images/equipe.jpg`, alt: 'Notre équipe' },
+  { src: `${prefix}/images/farm-images/materiel.jpg`, alt: 'Équipements' },
+  { src: `${prefix}/images/farm-images/recolte.jpg`, alt: 'Récoltes' },
+];
 
 const farmVideos = [
- { src: '/videos/farm-videos/presentation.mp4', title: 'Présentation de la ferme' },
- { src: '/videos/farm-videos/activities.mp4', title: 'Nos activités quotidiennes' },
+  { 
+    src: `${prefix}/videos/farm-videos/presentation.mp4`, 
+    title: 'Présentation de la ferme' 
+  },
+  { 
+    src: `${prefix}/videos/farm-videos/activities.mp4`, 
+    title: 'Nos activités quotidiennes' 
+  },
 ];
 
 const NavButton = ({ isOpen, toggle, scrolled }: { isOpen: boolean; toggle: () => void; scrolled: boolean }) => (
@@ -74,8 +81,14 @@ const FarmWebsite = () => {
    <div className="min-h-screen bg-gradient-to-b from-green-50 to-green-100">
      {/* Header avec parallax */}
      <header className="relative h-[70vh] overflow-hidden">
-       <div className="absolute inset-0 bg-[url('/images/farm-header.jpg')] bg-cover bg-center bg-no-repeat transform scale-110" 
-            style={{ transform: `translateY(${scrolled ? '10%' : '0'}) scale(${scrolled ? 1.1 : 1})`, transition: 'all 0.5s ease-out' }}>
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-110" 
+        style={{ 
+          backgroundImage: `url('${prefix}/images/farm-header.jpg')`,
+          transform: `translateY(${scrolled ? '10%' : '0'}) scale(${scrolled ? 1.1 : 1})`, 
+          transition: 'all 0.5s ease-out' 
+        }}
+      >
          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
        </div>
        <div className="relative h-full flex items-center justify-center text-center text-white p-4">
@@ -293,7 +306,7 @@ const FarmWebsite = () => {
                     onClick={() => setSelectedImage(image)}
                   >
                     <NextImage
-                      src={image.src}
+                      src={`${prefix}${image.src}`}
                       alt={image.alt}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
