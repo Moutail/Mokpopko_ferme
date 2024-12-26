@@ -12,19 +12,19 @@ type FarmImage = {
   category: 'ferme' | 'elevage' | 'culture' | 'equipe' | 'materiel';
  };
  
- // Images catégorisées
- const farmImages: FarmImage[] = [
-  { src: '/images/farm-images/ferme1.jpg', alt: 'Vue de la ferme', category: 'ferme' },
-  { src: '/images/farm-images/elevage.jpg', alt: 'Élevage', category: 'elevage' },
-  { src: '/images/farm-images/culture.jpg', alt: 'Cultures', category: 'culture' },
-  { src: '/images/farm-images/equipe.jpg', alt: 'Notre équipe', category: 'equipe' },
-  { src: '/images/farm-images/materiel.jpg', alt: 'Équipements', category: 'materiel' },
-  { src: '/images/farm-images/recolte.jpg', alt: 'Récoltes', category: 'culture' }
- ];
+// Images catégorisées
+const farmImages: FarmImage[] = [
+  { src: `${process.env.NEXT_PUBLIC_BASE_PATH}/images/farm-images/ferme1.jpg`, alt: 'Vue de la ferme', category: 'ferme' },
+  { src: `${process.env.NEXT_PUBLIC_BASE_PATH}/images/farm-images/elevage.jpg`, alt: 'Élevage', category: 'elevage' },
+  { src: `${process.env.NEXT_PUBLIC_BASE_PATH}/images/farm-images/culture.jpg`, alt: 'Cultures', category: 'culture' },
+  { src: `${process.env.NEXT_PUBLIC_BASE_PATH}/images/farm-images/equipe.jpg`, alt: 'Notre équipe', category: 'equipe' },
+  { src: `${process.env.NEXT_PUBLIC_BASE_PATH}/images/farm-images/materiel.jpg`, alt: 'Équipements', category: 'materiel' },
+  { src: `${process.env.NEXT_PUBLIC_BASE_PATH}/images/farm-images/recolte.jpg`, alt: 'Récoltes', category: 'culture' }
+];
 
 const farmVideos = [
- { src: '/videos/farm-videos/presentation.mp4', title: 'Présentation de la ferme' },
- { src: '/videos/farm-videos/activities.mp4', title: 'Nos activités quotidiennes' },
+  { src: `${process.env.NEXT_PUBLIC_BASE_PATH}/videos/farm-videos/presentation.mp4`, title: 'Présentation de la ferme' },
+  { src: `${process.env.NEXT_PUBLIC_BASE_PATH}/videos/farm-videos/activities.mp4`, title: 'Nos activités quotidiennes' },
 ];
 
 const NavButton = ({ isOpen, toggle, scrolled }: { isOpen: boolean; toggle: () => void; scrolled: boolean }) => (
