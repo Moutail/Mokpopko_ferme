@@ -74,7 +74,7 @@ const FarmWebsite = () => {
    <div className="min-h-screen bg-gradient-to-b from-green-50 to-green-100">
      {/* Header avec parallax */}
      <header className="relative h-[70vh] overflow-hidden">
-       <div className="absolute inset-0 bg-[url('/images/farm-header.jpg')] bg-cover bg-center bg-no-repeat transform scale-110" 
+       <div className="absolute inset-0 bg-[url('./images/farm-header.jpg')] bg-cover bg-center bg-no-repeat transform scale-110" 
             style={{ transform: `translateY(${scrolled ? '10%' : '0'}) scale(${scrolled ? 1.1 : 1})`, transition: 'all 0.5s ease-out' }}>
          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
        </div>
@@ -210,7 +210,7 @@ const FarmWebsite = () => {
             <div className="group rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
               <div className="relative h-64">
                 <NextImage 
-                  src="/images/farm-images/elevage.jpg"
+                  src="./images/farm-images/elevage.jpg"
                   alt="Élevage"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -234,7 +234,7 @@ const FarmWebsite = () => {
             <div className="group rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
               <div className="relative h-64">
                 <NextImage 
-                  src="/images/farm-images/culture.jpg"
+                  src="./images/farm-images/culture.jpg"
                   alt="Agriculture"
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
