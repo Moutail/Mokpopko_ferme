@@ -15,23 +15,17 @@ type FarmImage = {
  
  // Images catégorisées
 const farmImages = [
-  { src: `${prefix}/images/farm-images/ferme1.jpg`, alt: 'Vue de la ferme' },
-  { src: `${prefix}/images/farm-images/elevage.jpg`, alt: 'Élevage' },
-  { src: `${prefix}/images/farm-images/culture.jpg`, alt: 'Cultures' },
-  { src: `${prefix}/images/farm-images/equipe.jpg`, alt: 'Notre équipe' },
-  { src: `${prefix}/images/farm-images/materiel.jpg`, alt: 'Équipements' },
-  { src: `${prefix}/images/farm-images/recolte.jpg`, alt: 'Récoltes' },
+  { src: `./images/farm-images/ferme1.jpg`, alt: 'Vue de la ferme' },
+  { src: `./images/farm-images/elevage.jpg`, alt: 'Élevage' },
+  { src: `./images/farm-images/culture.jpg`, alt: 'Cultures' },
+  { src: `./images/farm-images/equipe.jpg`, alt: 'Notre équipe' },
+  { src: `./images/farm-images/materiel.jpg`, alt: 'Équipements' },
+  { src: `./images/farm-images/recolte.jpg`, alt: 'Récoltes' },
 ];
 
 const farmVideos = [
-  { 
-    src: `${prefix}/videos/farm-videos/presentation.mp4`, 
-    title: 'Présentation de la ferme' 
-  },
-  { 
-    src: `${prefix}/videos/farm-videos/activities.mp4`, 
-    title: 'Nos activités quotidiennes' 
-  },
+  { src: './videos/farm-videos/presentation.mp4', title: 'Présentation de la ferme' },
+  { src: './videos/farm-videos/activities.mp4', title: 'Nos activités quotidiennes' },
 ];
 
 const NavButton = ({ isOpen, toggle, scrolled }: { isOpen: boolean; toggle: () => void; scrolled: boolean }) => (
@@ -82,9 +76,8 @@ const FarmWebsite = () => {
      {/* Header avec parallax */}
      <header className="relative h-[70vh] overflow-hidden">
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-110" 
+        className="absolute inset-0 bg-[url('./images/farm-header.jpg')] bg-cover bg-center bg-no-repeat transform scale-110" 
         style={{ 
-          backgroundImage: `url('${prefix}/images/farm-header.jpg')`,
           transform: `translateY(${scrolled ? '10%' : '0'}) scale(${scrolled ? 1.1 : 1})`, 
           transition: 'all 0.5s ease-out' 
         }}
@@ -306,7 +299,7 @@ const FarmWebsite = () => {
                     onClick={() => setSelectedImage(image)}
                   >
                     <NextImage
-                      src={`${prefix}${image.src}`}
+                      src={image.src}
                       alt={image.alt}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
