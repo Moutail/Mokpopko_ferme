@@ -4,9 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/Mokpopko_ferme',
-  assetPrefix: '/Mokpopko_ferme/',
-  trailingSlash: true,
+  basePath: process.env.NODE_ENV === 'production' ? '/Mokpopko_ferme' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/Mokpopko_ferme/' : '',
 }
 
 module.exports = nextConfig
