@@ -14,17 +14,17 @@ type FarmImage = {
  
 // Images catégorisées
 const farmImages: FarmImage[] = [
-  { src: '/images/farm-images/ferme1.jpg', alt: 'Vue de la ferme', category: 'ferme' },
-  { src: '/images/farm-images/elevage.jpg', alt: 'Élevage', category: 'elevage' },
-  { src: '/images/farm-images/culture.jpg', alt: 'Cultures', category: 'culture' },
-  { src: '/images/farm-images/equipe.jpg', alt: 'Notre équipe', category: 'equipe' },
-  { src: '/images/farm-images/materiel.jpg', alt: 'Équipements', category: 'materiel' },
-  { src: '/images/farm-images/recolte.jpg', alt: 'Récoltes', category: 'culture' }
+  { src: './images/farm-images/ferme1.jpg', alt: 'Vue de la ferme', category: 'ferme' },
+  { src: './images/farm-images/elevage.jpg', alt: 'Élevage', category: 'elevage' },
+  { src: './images/farm-images/culture.jpg', alt: 'Cultures', category: 'culture' },
+  { src: './images/farm-images/equipe.jpg', alt: 'Notre équipe', category: 'equipe' },
+  { src: './images/farm-images/materiel.jpg', alt: 'Équipements', category: 'materiel' },
+  { src: './images/farm-images/recolte.jpg', alt: 'Récoltes', category: 'culture' }
  ];
 
 const farmVideos = [
- { src: '/videos/farm-videos/presentation.mp4', title: 'Présentation de la ferme' },
- { src: '/videos/farm-videos/activities.mp4', title: 'Nos activités quotidiennes' },
+ { src: './videos/farm-videos/presentation.mp4', title: 'Présentation de la ferme' },
+ { src: './videos/farm-videos/activities.mp4', title: 'Nos activités quotidiennes' },
 ]
 
 const NavButton = ({ isOpen, toggle, scrolled }: { isOpen: boolean; toggle: () => void; scrolled: boolean }) => (
